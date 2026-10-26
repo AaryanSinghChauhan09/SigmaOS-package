@@ -1,0 +1,17 @@
+[package]
+name = "sigmaos-package"
+version = "0.1.0"
+edition = "2021"
+authors = ["SigmaOS Project"]
+description = "Universal package manager supporting APT, pacman, Flatpak, Snap backends"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/AaryanSinghChauhan09/SigmaOS-package"
+readme = "README.md"
+keywords = ["package", "manager", "apt", "pacman", "flatpak", "snap"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+sigmaos-kernel = { version = "0.1", path = "../SigmaOS-kernel" }
+
+[profile.release]
+opt-level = 3
