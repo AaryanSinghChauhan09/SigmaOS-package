@@ -4,7 +4,7 @@ use std::vec::Vec;
 // Sovereign APM (Agent Package Manager)
 // Core native package manager for isolated, reproducible sovereign application deployments.
 
-use crate::klib::HashMap;
+use klib::HashMap;
 use crate::security::CapabilityToken;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]

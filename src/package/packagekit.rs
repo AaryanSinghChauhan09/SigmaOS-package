@@ -1,7 +1,7 @@
 // SigmaOS PackageKit High-Level Daemon Abstraction
 // Clean-room representation of Linux & BSD PackageKit DBus daemon APIs
 
-use crate::klib::HashMap;
+use klib::HashMap;
 
 /// PackageKit Transaction Roles (Standard PackageKit DBus Specification)
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]

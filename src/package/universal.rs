@@ -9,7 +9,7 @@ use alloc::vec::Vec;
 // Unified system absorbing apt, yum, pacman, snap, flatpak, zypper, dnf, appimages
 
 #[cfg(not(any(feature = "standalone_test", test)))]
-use crate::klib::collections::{HashMap, HashSet};
+use klib::collections::{HashMap, HashSet};
 use alloc::sync::Arc;
 #[cfg(any(feature = "standalone_test", test))]
 use std::collections::{HashMap, HashSet};

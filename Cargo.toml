@@ -11,7 +11,12 @@ keywords = ["package", "manager", "apt", "pacman", "flatpak", "snap"]
 categories = ["command-line-utilities"]
 
 [dependencies]
-sigmaos-kernel = { version = "0.1", path = "../SigmaOS-kernel" }
+sigmaos-klib = { path = "../SigmaOS-klib" }
+
+[features]
+default = ["std"]
+std = []
+no_std = []
 
 [profile.release]
 opt-level = 3
