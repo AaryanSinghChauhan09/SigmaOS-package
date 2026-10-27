@@ -1,11 +1,29 @@
 use std::format;
 use std::string::{String, ToString};
 use std::vec::Vec;
+use std::collections::HashMap;
 // Sovereign APM (Agent Package Manager)
 // Core native package manager for isolated, reproducible sovereign application deployments.
 
-use klib::HashMap;
-use crate::security::CapabilityToken;
+// Temporary stub for security module
+#[derive(Debug, Clone, Copy)]
+pub struct CapabilityToken {
+    bits: u64,
+}
+
+impl CapabilityToken {
+    pub fn new() -> Self {
+        CapabilityToken { bits: 0 }
+    }
+
+    pub fn bits(&self) -> u64 {
+        self.bits
+    }
+
+    pub fn allow_network(self, _protocol: &str, _port: u16) -> Self {
+        CapabilityToken { bits: 1 }
+    }
+}
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum IsolationLevel {

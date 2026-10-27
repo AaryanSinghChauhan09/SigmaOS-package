@@ -3,13 +3,8 @@
 // Implements Davis-Putnam-Logemann-Loveland (DPLL) Boolean Satisfiability (SAT) solver
 // for zero-ambiguity multi-format cross-distro package dependency resolution.
 
-#[cfg(not(any(feature = "standalone_test", test)))]
-use alloc::string::{String, ToString};
-#[cfg(not(any(feature = "standalone_test", test)))]
-use alloc::vec::Vec;
-
-#[cfg(any(feature = "standalone_test", test))]
 use std::string::{String, ToString};
+use std::vec::Vec;
 
 /// Represents a literal variable in SAT CNF (boolean form)
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]

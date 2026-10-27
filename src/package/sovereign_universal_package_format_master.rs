@@ -13,7 +13,7 @@ use alloc::vec;
 use alloc::vec::Vec;
 
 #[cfg(not(any(feature = "standalone_test", test)))]
-use klib::{BTreeMap, HashMap, HashSet};
+use std::collections::{BTreeMap, HashMap, HashSet};
 
 #[cfg(any(feature = "standalone_test", test))]
 use std::collections::{BTreeMap, HashMap, HashSet};

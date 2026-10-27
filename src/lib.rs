@@ -13,5 +13,6 @@ pub mod package;
 pub use package::PackageManager;
 pub use package::PackageBackend;
 
-// Re-export klib types for use in package
-pub use crate::klib::{HashMap, BTreeMap, HashSet, Vec};
+// Re-export std types for use in package (temporary fix)
+pub use std::collections::{HashMap, BTreeMap, HashSet};
+pub use std::vec::Vec;

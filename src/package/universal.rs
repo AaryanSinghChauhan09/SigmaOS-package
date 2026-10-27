@@ -9,13 +9,38 @@ use alloc::vec::Vec;
 // Unified system absorbing apt, yum, pacman, snap, flatpak, zypper, dnf, appimages
 
 #[cfg(not(any(feature = "standalone_test", test)))]
-use klib::collections::{HashMap, HashSet};
+use std::collections::{HashMap, HashSet};
 use alloc::sync::Arc;
 #[cfg(any(feature = "standalone_test", test))]
 use std::collections::{HashMap, HashSet};
 
+// Temporary stub for runtime module
 #[cfg(not(any(feature = "standalone_test", test)))]
-use crate::runtime::node_distribution::{NodeBinaryDistroEngine, NodeBinaryPackage};
+pub mod node_distribution {
+    #[derive(Debug, Clone)]
+    pub struct NodeBinaryPackage {
+        pub version: String,
+    }
+
+    #[derive(Debug, Clone)]
+    pub struct NodeBinaryDistroEngine;
+
+    impl NodeBinaryDistroEngine {
+        pub fn new() -> Self {
+            NodeBinaryDistroEngine
+        }
+
+        pub fn install_to_store(&self, _package: &NodeBinaryPackage) -> Result<(), String> {
+            Ok(())
+        }
+    }
+}
+
+#[cfg(not(any(feature = "standalone_test", test)))]
+use crate::package::node_distribution::{NodeBinaryDistroEngine, NodeBinaryPackage};
+
+#[cfg(any(feature = "standalone_test", test))]
+use crate::package::node_distribution_dummy as node_distribution;
 
 #[cfg(any(feature = "standalone_test", test))]
 pub mod node_distribution_dummy {

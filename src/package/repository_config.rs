@@ -2,7 +2,7 @@
 // Implements repository configuration per Wiki 09-Packaging.md
 // Supports multiple package repositories with priority and trust settings
 
-use klib::HashMap;
+use std::collections::HashMap;
 use std::string::{String, ToString};
 use std::vec::Vec;
 
