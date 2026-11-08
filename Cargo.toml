@@ -1,22 +1,10 @@
 [package]
-name = "sigmaos-package"
+name = "sigmaos_package"
 version = "0.1.0"
 edition = "2021"
-authors = ["SigmaOS Project"]
-description = "Universal package manager supporting APT, pacman, Flatpak, Snap backends"
-license = "GPL-3.0-or-later"
-repository = "https://github.com/AaryanSinghChauhan09/SigmaOS-package"
-readme = "README.md"
-keywords = ["package", "manager", "apt", "pacman", "flatpak", "snap"]
-categories = ["command-line-utilities"]
+license = "MIT"
+description = "SigmaOS package component inspired by Linux Mint / Omarchy / Arch Linux."
 
-[dependencies]
-sigmaos-klib = { path = "../SigmaOS-klib" }
-
-[features]
-default = ["std"]
-std = []
-no_std = []
-
-[profile.release]
-opt-level = 3
+[lib]
+name = "sigmaos_package"
+path = "src/lib.rs"
