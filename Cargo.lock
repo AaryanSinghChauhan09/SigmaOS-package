@@ -3,12 +3,5 @@
 version = 4
 
 [[package]]
-name = "sigmaos-klib"
+name = "sigmaos_package"
 version = "0.1.0"
-
-[[package]]
-name = "sigmaos-package"
-version = "0.1.0"
-dependencies = [
- "sigmaos-klib",
-]
